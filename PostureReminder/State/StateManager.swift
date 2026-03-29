@@ -92,6 +92,14 @@ final class StateManager: ObservableObject {
         // Detect state transitions before anything is updated
         let exitingDeepThinking = (currentState == .deepThinking && newState != .deepThinking)
 
+        // Idle-based break: if system has been idle >= breakThreshold and we're
+        // not in deep-thinking, treat it as a completed break and reset the timer.
+        // This handles the common case where the user stands up but remains visible
+        // to the camera, so the camera-based absence path never fires.
+        if newState == .resting && idleTime >= settings.breakThreshold {
+            applyIdleBreakResetIfNeeded()
+        }
+
         updateDeepThinkingTimer(newState: newState, now: now)
         updatePresenceTimer(
             pose: pose,
@@ -136,6 +144,20 @@ final class StateManager: ObservableObject {
         } else {
             deepThinkingStartTime = nil
         }
+    }
+
+    // MARK: - Idle-break reset
+
+    /// Resets sitting timer when idle time alone confirms a completed break.
+    /// No-op if the timer is already at zero (prevents repeated resets each tick).
+    private func applyIdleBreakResetIfNeeded() {
+        guard sittingAccumulated > 0 || atDeskSince != nil else { return }
+        sittingAccumulated    = 0
+        atDeskSince           = nil   // pause clock; updatePresenceTimer restarts it on return
+        awaySince             = nil
+        notDetectedSince      = nil
+        didResetDuringAbsence = false
+        notificationManager.resetCooldown()
     }
 
     // MARK: - Presence / sitting timer
