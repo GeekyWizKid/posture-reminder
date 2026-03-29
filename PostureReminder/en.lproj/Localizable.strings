@@ -1,0 +1,47 @@
+/* States */
+"state.working"       = "Working";
+"state.deep_thinking" = "Deep Thinking";
+"state.resting"       = "Resting";
+
+/* Menu bar */
+"menu.state_label"      = "State: %@";
+"menu.sitting_minutes"  = "Sitting: %d min";
+"menu.on_break"         = "On break";
+"menu.focus_duration"   = "Focus: %@";
+"menu.reset_timer"      = "Reset Sitting Timer";
+"menu.settings"         = "Settings…";
+"menu.quit"             = "Quit PostureReminder";
+
+/* Status bar tooltip */
+"tooltip.format" = "PostureReminder — %@";
+
+/* Notification */
+"notification.title" = "Time to Stand Up";
+"notification.body"  = "You've been sitting for %d minutes. Stretch or walk around.";
+
+/* Settings window */
+"settings.window_title" = "PostureReminder Settings";
+
+"settings.sitting_alert.label" = "Sitting alert";
+"settings.sitting_alert.help"  = "Send a reminder when you've been sitting this long.";
+
+"settings.idle_threshold.label" = "Idle threshold";
+"settings.idle_threshold.help"  = "How long without keyboard/mouse input before leaving Working state.";
+
+"settings.break_duration.label" = "Break resets timer after";
+"settings.break_duration.help"  = "Continuous resting time needed to fully reset the sitting clock.";
+
+"settings.unit.min" = "min";
+
+/* Diagnostics */
+"diag.camera_on"  = "📷 Camera: On";
+"diag.camera_off" = "📷 Camera: Off";
+"diag.person_yes" = "👤 Person: Detected";
+"diag.person_no"  = "👤 Person: Not detected";
+"diag.idle"       = "⏱ Idle: %@";
+
+/* Notification onboarding */
+"onboard.title"         = "Enable Notifications";
+"onboard.body"          = "PostureReminder needs notification permission to remind you to stand up.\n\nOpen System Settings → Notifications → PostureReminder and turn on Allow Notifications.";
+"onboard.open_settings" = "Open System Settings";
+"onboard.later"         = "Later";

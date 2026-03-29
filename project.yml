@@ -1,0 +1,45 @@
+name: PostureReminder
+
+options:
+  bundleIdPrefix: com.yourname
+  deploymentTarget:
+    macOS: "12.0"
+  xcodeVersion: "15"
+  generateEmptyDirectories: true
+
+settings:
+  base:
+    SWIFT_VERSION: "5.9"
+    MACOSX_DEPLOYMENT_TARGET: "12.0"
+    ENABLE_HARDENED_RUNTIME: YES
+    CODE_SIGN_STYLE: Automatic
+
+targets:
+  PostureReminder:
+    type: application
+    platform: macOS
+
+    sources:
+      - path: PostureReminder
+        excludes:
+          - "**/*.plist"
+          - "**/*.entitlements"
+
+    resources:
+      # Drop yolov8n-pose.mlmodelc here after converting the model
+      - path: PostureReminder/Resources
+        optional: true
+
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.yourname.PostureReminder
+        INFOPLIST_FILE: PostureReminder/Info.plist
+        CODE_SIGN_ENTITLEMENTS: PostureReminder/PostureReminder.entitlements
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+
+    dependencies:
+      - sdk: IOKit.framework
+      - sdk: AVFoundation.framework
+      - sdk: CoreML.framework
+      - sdk: Vision.framework
+      - sdk: UserNotifications.framework

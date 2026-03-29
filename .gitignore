@@ -1,0 +1,32 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Xcode / build
+build/
+DerivedData/
+*.xcworkspace/xcuserdata/
+*.xcodeproj/xcuserdata/
+*.xcodeproj/project.xcworkspace/xcuserdata/
+xcuserdata/
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# Swift Package Manager
+.build/
+.swiftpm/
+
+# Generated files (reproducible via xcodegen)
+PostureReminder.xcodeproj/
+
+# ML model weights (large binary, not needed for build CI)
+*.pt
+*.weights
+
+# App bundle artifacts
+*.app
+
+# Claude Code internal
+.claude/

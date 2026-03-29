@@ -1,0 +1,47 @@
+/* States */
+"state.working"       = "作業中";
+"state.deep_thinking" = "集中中";
+"state.resting"       = "休憩中";
+
+/* Menu bar */
+"menu.state_label"      = "状態：%@";
+"menu.sitting_minutes"  = "着席：%d 分";
+"menu.on_break"         = "休憩中";
+"menu.focus_duration"   = "集中：%@";
+"menu.reset_timer"      = "着席タイマーをリセット";
+"menu.settings"         = "設定…";
+"menu.quit"             = "PostureReminder を終了";
+
+/* Status bar tooltip */
+"tooltip.format" = "PostureReminder — %@";
+
+/* Notification */
+"notification.title" = "立ち上がりましょう";
+"notification.body"  = "%d 分間座り続けています。ストレッチや歩き回りをしてください。";
+
+/* Settings window */
+"settings.window_title" = "PostureReminder 設定";
+
+"settings.sitting_alert.label" = "着席アラート";
+"settings.sitting_alert.help"  = "この時間座り続けるとリマインダーを送信します。";
+
+"settings.idle_threshold.label" = "アイドルしきい値";
+"settings.idle_threshold.help"  = "キーボード／マウス操作なしで作業状態を離れるまでの時間。";
+
+"settings.break_duration.label" = "タイマーリセット必要休憩時間";
+"settings.break_duration.help"  = "着席タイマーをリセットするために必要な継続休憩時間。";
+
+"settings.unit.min" = "分";
+
+/* Diagnostics */
+"diag.camera_on"  = "📷 カメラ：オン";
+"diag.camera_off" = "📷 カメラ：オフ";
+"diag.person_yes" = "👤 人物：検出";
+"diag.person_no"  = "👤 人物：未検出";
+"diag.idle"       = "⏱ アイドル：%@";
+
+/* Notification onboarding */
+"onboard.title"         = "通知を有効にする";
+"onboard.body"          = "PostureReminder が立ち上がりを促すには通知の許可が必要です。\n\nシステム設定 → 通知 → PostureReminder を開き、「通知を許可」をオンにしてください。";
+"onboard.open_settings" = "システム設定を開く";
+"onboard.later"         = "後で";

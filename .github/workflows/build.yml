@@ -1,0 +1,51 @@
+name: Build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    name: Build macOS App
+    runs-on: macos-15
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install xcodegen
+        run: brew install xcodegen
+
+      - name: Generate Xcode project
+        run: xcodegen generate --quiet
+
+      - name: Build (ad-hoc signed)
+        run: |
+          xcodebuild \
+            -project PostureReminder.xcodeproj \
+            -scheme  PostureReminder \
+            -configuration Release \
+            -derivedDataPath build \
+            CODE_SIGN_IDENTITY="-" \
+            CODE_SIGNING_REQUIRED=YES \
+            CODE_SIGNING_ALLOWED=YES \
+            DEVELOPMENT_TEAM="" \
+            | xcpretty || cat /dev/stdin
+
+      - name: Verify .app exists
+        run: |
+          APP="build/Build/Products/Release/PostureReminder.app"
+          if [ ! -d "$APP" ]; then
+            echo "Build failed — .app not found"
+            exit 1
+          fi
+          echo "Build succeeded: $APP"
+
+      - name: Upload .app artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: PostureReminder-${{ github.sha }}
+          path: build/Build/Products/Release/PostureReminder.app
+          retention-days: 14

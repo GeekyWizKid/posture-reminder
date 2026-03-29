@@ -1,0 +1,47 @@
+/* States */
+"state.working"       = "工作中";
+"state.deep_thinking" = "专注中";
+"state.resting"       = "休息中";
+
+/* Menu bar */
+"menu.state_label"      = "状态：%@";
+"menu.sitting_minutes"  = "久坐：%d 分钟";
+"menu.on_break"         = "休息中";
+"menu.focus_duration"   = "专注：%@";
+"menu.reset_timer"      = "重置久坐计时";
+"menu.settings"         = "设置…";
+"menu.quit"             = "退出 PostureReminder";
+
+/* Status bar tooltip */
+"tooltip.format" = "PostureReminder — %@";
+
+/* Notification */
+"notification.title" = "该起来活动了";
+"notification.body"  = "你已久坐 %d 分钟，起来伸展一下吧。";
+
+/* Settings window */
+"settings.window_title" = "PostureReminder 设置";
+
+"settings.sitting_alert.label" = "久坐提醒时长";
+"settings.sitting_alert.help"  = "久坐超过此时长后发送提醒。";
+
+"settings.idle_threshold.label" = "空闲阈值";
+"settings.idle_threshold.help"  = "键鼠无操作多久后视为离开工作状态。";
+
+"settings.break_duration.label" = "重置所需休息时长";
+"settings.break_duration.help"  = "持续休息达到此时长后，久坐计时归零。";
+
+"settings.unit.min" = "分钟";
+
+/* Diagnostics */
+"diag.camera_on"  = "📷 摄像头：开启";
+"diag.camera_off" = "📷 摄像头：未开启";
+"diag.person_yes" = "👤 检测到人";
+"diag.person_no"  = "👤 未检测到人";
+"diag.idle"       = "⏱ 空闲：%@";
+
+/* Notification onboarding */
+"onboard.title"         = "开启通知权限";
+"onboard.body"          = "PostureReminder 需要通知权限才能提醒你起身活动。\n\n请前往 系统设置 → 通知 → PostureReminder，开启「允许通知」。";
+"onboard.open_settings" = "打开系统设置";
+"onboard.later"         = "稍后";
